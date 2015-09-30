@@ -54,6 +54,7 @@ set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
  
+" Column 80 marker
 hi ColorColumn guibg=#cdc9c9 ctermbg=0
 let &colorcolumn=join(range(81,81),",")
  
@@ -64,15 +65,19 @@ set background=dark " When set to "dark", Vim will try to use colors that look
                     " good on a dark background. When set to "light", Vim will
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
+
+" colour schemes
 if has ("gui_running")
     colorscheme solarized
 else
     colorscheme meta5
 endif
  
-setlocal spell spelllang=en_nz  " Set spell checking
+setlocal spell spelllang=en_nz          " Set spell checking: z=
  
 filetype plugin indent on
-syntax on
+set omnifunc=syntaxcomplete#Complete    " omni completion: CTRL-X CTRL-O
+syntax on                               " Enable syntax highlight
 
+" 2 space tabs for HTML
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
