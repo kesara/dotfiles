@@ -79,5 +79,6 @@ filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete    " omni completion: CTRL-X CTRL-O
 syntax on                               " Enable syntax highlight
 
-" 2 space tabs for HTML
+" 2 space tabs for HTML & JavaScript
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
