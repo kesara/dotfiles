@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christophermca/meta5'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
