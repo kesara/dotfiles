@@ -11,7 +11,7 @@ set $term urxvt
 # Your preferred application launcher
 set $menu dmenu_run
 # Web browser
-set $web icecat
+set $web iceweasel
 # Screen lock
 set $lock swaylock
 # screenshots

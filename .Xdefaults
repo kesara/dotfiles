@@ -18,11 +18,6 @@ URxvt*boldFont: xft:Monospace:pixelsize=13
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
-! Perl extensions
-URxvt.perl-ext-common:      default,matcher
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          icecat
-
 ! Cursor
 URxvt.cursorBlink:          true
 URxvt.cursorUnderline:      true
