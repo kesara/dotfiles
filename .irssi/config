@@ -29,7 +29,7 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
     sasl_mechanism = "PLAIN";
-    sasl_username = "kesara";
+    sasl_username = "hunter";
     sasl_password = "hunter2";
   };
   GIMPNet = { type = "IRC"; };
@@ -295,7 +295,11 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "Unknown"; user_name = "kesara"; nick = "kesara"; };
+  core = {
+    real_name = "Unknown";
+    user_name = "hunter";
+    nick = "hunter";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "crystal"; };
 };
