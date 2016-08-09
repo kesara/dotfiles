@@ -13,7 +13,7 @@ set $menu dmenu_run
 # Web browser
 set $web iceweasel
 # Screen lock
-set $lock swaylock
+set $lock swaylock -c 000000
 # screenshots
 set $sshot swaygrab
 

@@ -12,29 +12,35 @@ general {
 }
 
 order += "disk /"
+order += "load"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
-order += "load"
+order += "volume master"
 order += "tztime local"
 
 disk "/" {
-    format = "%avail"
+    format = "%percentage_avail"
+    prefix_type = "custom"
+}
+
+load {
+    format = "%1min"
 }
 
 wireless _first_ {
-    format_up = "W: (%quality at %essid) %ip"
-    format_down = "W: down"
+    format_up = "☢[%quality %essid]"
+    format_down = "☢"
 }
 
 ethernet _first_ {
-    format_up = "E: %ip"
-    format_down = "E: down"
+    format_up = "☎"
+    format_down = "☎"
 }
 
 battery 0 {
     format = "%status %percentage %remaining"
-    format_down = "No battery"
+    format_down = "⚠"
     hide_seconds = true
     integer_battery_capacity = true
     status_chr = "⚇"
@@ -42,10 +48,14 @@ battery 0 {
     status_full = "☻"
 }
 
-load {
-    format = "%1min"
+volume master {
+    format = "♪ %volume"
+    format_muted = "♪ %volume[M]"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 tztime local {
-    format = "%d/%m %H:%M"
+    format = "%b %d ⚛ %H:%M"
 }
