@@ -158,6 +158,7 @@ client.unfocused #333333 #222222 #808080 #ffffff #333333
 # Status Bar:
 #
 bar {
+    status_command i3status
     position bottom
     colors {
         statusline #222222
