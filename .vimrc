@@ -79,6 +79,7 @@ setlocal spell spelllang=en_nz          " Set spell checking: z=
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete    " omni completion: CTRL-X CTRL-O
 syntax on                               " Enable syntax highlight
+hi Normal ctermbg=None                  " Transparent background
 
 " 2 space tabs for HTML & JavaScript
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
