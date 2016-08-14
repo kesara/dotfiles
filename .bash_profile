@@ -7,6 +7,9 @@ PS1='\[\e[1;31m\][\[\e[1;32m\]\W\[\e[1;31m\]]\[\e[1;32m\]\$\[\e[0m\] '
 
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.bin"
 
+# Get a random wallpaper
+ln -sf ~/.wallpapers/`ls ~/.wallpapers/ |sort -R |tail -1` ~/.wallpaper
+
 # Start sway if it's not already started
 if [[ ! `ps -o comm --no-header -u $USER | egrep ^sway$` ]]
 then

@@ -20,11 +20,11 @@ set $sshot swaygrab
 set $mutetoggle amixer set Master toggle
 set $volumeup amixer set Master 5%+
 set $volumedown amixer set Master 5%-
+# Change wallpaper (randomly)
+set $wallpaper swaymsg output \* bg ~/.wallpapers/`ls ~/.wallpapers/ |sort -R |tail -1` fill
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/sway/)
-output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/kesara/.wallpaper fill
 
 ### Key bindings
 #
@@ -37,6 +37,7 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+q kill
 
     # start your launcher
+    bindsym $mod+space exec $menu
     bindsym $mod+d exec $menu
 
     # start web browser
@@ -53,6 +54,9 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym XF86AudioMute exec $mutetoggle
     bindsym XF86AudioRaiseVolume exec $volumeup
     bindsym XF86AudioLowerVolume exec $volumedown
+
+    #wallpaper
+    bindsym $mod+Shift+w exec $wallpaper
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -138,7 +142,7 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Control+space focus mode_toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
