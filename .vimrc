@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christophermca/meta5'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
@@ -32,6 +33,8 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
                     " at the start of the line.
  
 set showcmd         " Show (partial) command in status line.
+
+set laststatus=2    " Always show status line.
 
 set number          " Show line numbers.
 
@@ -83,3 +86,4 @@ syntax on                               " Enable syntax highlight
 " 2 space tabs for HTML & JavaScript
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2

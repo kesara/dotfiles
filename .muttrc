@@ -1,0 +1,50 @@
+set my_server = foo.bar
+set my_smtp_server = $my_server
+set my_user = foo
+set my_pass = "`security find-internet-password -g -a foo@foo.bar 2>&1 | perl -e 'if (<STDIN> =~ m/password: "(.*)"$/ ) { print $1; }'`"
+
+set record = "imaps://$my_user@$my_server/INBOX.Sent"
+set postponed = "imaps://$my_user@$my_server/INBOX.Drafts"
+
+set from = "foo@foo.bar"
+
+set smtp_url = "smtp://$my_user:$my_pass@$my_server:25"
+set smtp_pass = $my_pass
+set imap_user = $my_user
+set imap_pass = $my_pass
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
+set spoolfile = "imaps://$my_server/INBOX"
+
+set folder = "imaps://$my_server/INBOX"
+
+set crypt_use_gpgme = yes
+set crypt_autosign = yes
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+set pager_stop
+
+set signature = ~/.signature
+
+color   normal      green           default
+color   error       red             default
+color   indicator   brightwhite     black
+color   status      white           black
+color   index       brightgreen     default     "~N"    # new messages
+color   hdrdefault  brightblue      default
+color   header      yellow          default     "^(From)"
+color   header      yellow          default     "^(Subject)"
+color   quoted      cyan            default
+color   quoted1     yellow          default
+color   quoted2     white           default
+color   quoted3     brightwhite     default
+color   quoted4     brightblue      default
+color   signature   brightgreen     default
+color   bold        brightgreen     default
+color   underline   brightgreen     default
+
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+bind index G imap-fetch-mail
