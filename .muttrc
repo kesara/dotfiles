@@ -23,6 +23,7 @@ set crypt_autosign = yes
 set sort = threads
 set sort_aux = reverse-last-date-received
 set pager_stop
+set editor = "vim"
 
 set signature = ~/.signature
 
@@ -46,3 +47,11 @@ color   underline   brightgreen     default
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
 bind index G imap-fetch-mail
+
+# Sidebar
+set mail_check_stats
+set sidebar_visible
+mailboxes =INBOX =Foo/Bar
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
