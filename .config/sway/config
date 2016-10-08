@@ -146,6 +146,9 @@ output * bg /home/kesara/.wallpaper fill
 
     # move focus to the parent container
     bindsym $mod+a focus parent
+
+    # toggle borders
+    bindsym $mod+Shift+b border toggle
 #
 # Scratchpad:
 #
@@ -167,6 +170,10 @@ client.background #000000
 client.focused #808080 #808080 #000000 #ffffff #808080
 client.focused_inactive #808080 #222222 #808080 #ffffff #808080
 client.unfocused #333333 #222222 #808080 #ffffff #333333
+
+# Borders
+hide_edge_borders both
+new_window pixel 1
 
 #
 # Status Bar:
