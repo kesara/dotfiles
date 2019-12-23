@@ -10,8 +10,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'christophermca/meta5'
 Plugin 'rust-lang/rust.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'dense-analysis/ale'
 
 call vundle#end()
 
@@ -62,17 +65,8 @@ let &colorcolumn=join(range(81,81),",")
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
  
-set background=dark " When set to "dark", Vim will try to use colors that look
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
-
-" colour schemes
-if has ("gui_running")
-    colorscheme solarized
-else
-    colorscheme meta5
-endif
+set background=light
+colorscheme solarized
  
 setlocal spell spelllang=en_nz          " Set spell checking: z=
  
@@ -81,6 +75,22 @@ set omnifunc=syntaxcomplete#Complete    " omni completion: CTRL-X CTRL-O
 syntax on                               " Enable syntax highlight
 hi Normal ctermbg=None                  " Transparent background
 
-" 2 space tabs for HTML & JavaScript
+" 2 space tabs for Ruby, HTML, CSS & JavaScript
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+
+" show buffer list on airplane
+let g:airline#extensions#tabline#enabled = 1
+
+" ALE linters
+let g:ale_linters = {
+\   'python': ['pylint'],
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\}
+let g:ale_linters_explicit = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_column_always = 1
