@@ -2,7 +2,7 @@
 
 Configurations files for:
   * vim
-  * zsh
-  * ohmyzsh
+  * zsh/ohmyzsh
   * git
   * gnupg
+  * iterm2
