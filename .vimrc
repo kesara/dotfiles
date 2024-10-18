@@ -103,3 +103,6 @@ let g:ale_linters_explicit = 1
 " airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
+
+" abbrevations
+ab pyd import pdb; pdb.set_trace()
