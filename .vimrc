@@ -106,3 +106,6 @@ let g:airline#extensions#ale#enabled = 1
 
 " abbrevations
 ab pyd import pdb; pdb.set_trace()
+
+" FZF
+set rtp+=/opt/homebrew/opt/fzf
