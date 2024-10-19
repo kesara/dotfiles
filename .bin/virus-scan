@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+freshclam
+clamscan -v -r --infected --bell ${1:-$(pwd)}
