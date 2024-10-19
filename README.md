@@ -6,3 +6,4 @@ Configurations files for:
   * git
   * gnupg
   * iterm2
+  * ClamAV
