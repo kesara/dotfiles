@@ -13,3 +13,6 @@ eval "$(gpgconf --launch gpg-agent)"
 # FZF
 export FZF_COMPLETION_TRIGGER="++"
 source <(fzf --zsh)
+
+# PATH
+export PATH="$HOME/.bin:$PATH"
